@@ -10,7 +10,9 @@
     <form id="form1" runat="server">
         <div>
 
-            <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Enter the Project Details</asp:Panel>
+            <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Enter the Project Details:
+                
+            </asp:Panel>
             <asp:Label ID="Label1" runat="server" Text="Enter the title of the project"></asp:Label>
             &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
@@ -27,6 +29,12 @@
        
             
             <br />
+       
+            
+            <br />
+       
+            
+            <asp:Button ID="EnterButton" runat="server" Text="Create Project" OnClick="EnterButton_Click"  />
        
             
             <br />
