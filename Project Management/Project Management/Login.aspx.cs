@@ -15,9 +15,9 @@ namespace Project_Management
         private string connectionstring = WebConfigurationManager.ConnectionStrings["Project"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack)
             {
-
+                Session.Abandon();
             }
         }
 
@@ -26,18 +26,17 @@ namespace Project_Management
             string username = TextBox1.Text;
             string password = TextBox2.Text;
             SqlConnection connection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TABLE WHERE UserName = @username AND Password =  @password", connection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Login WHERE UserName = @username AND Password =  @password", connection);
             cmd.Parameters.AddWithValue("@username",username);
             cmd.Parameters.AddWithValue("@password", password);
             SqlDataReader myreader;
             try
             {
-                using (connection)
-                {
+                  {
                     connection.Open();
                     myreader = cmd.ExecuteReader();
                     myreader.Read();
-                    if (myreader != null )
+                    if (myreader != null)
                     {
                         Label2.Text = "Welcome " + myreader["name"] + "! " + "Redirecting You To " + myreader["Type"] + "'s Page";
                         Thread.Sleep(2000);
@@ -47,17 +46,20 @@ namespace Project_Management
                     {
                         Label2.Text = "Oops!! The Password You Entered Was Incorrect";
                         Thread.Sleep(2000);
-                        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Incorrect Password", "alert('Record Inserted Successfully')", true);
                        // Page.Response.Redirect(Page.Request.Url.ToString(), true);
                     }
                 }
             }
             catch(Exception)
             {
-
+       
                 Label2.Text = "Oops!! Random Error. Reloading in 1...";
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Some Random Error. Reload?", "alert('Record Inserted Successfully')", true);
-               // Page.Response.Redirect(Page.Request.Url.ToString(), true);  
+                Thread.Sleep(200000);
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
