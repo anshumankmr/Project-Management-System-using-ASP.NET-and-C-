@@ -9,8 +9,28 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Enter the Project Details</asp:Panel>
             <asp:Label ID="Label1" runat="server" Text="Enter the title of the project"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Enter the name of the client
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Enter the expected duration of the project&nbsp;
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Enter the initial status of the project&nbsp; <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+       
+            
+            <br />
+       
+            
+            <br />
+            <br />
         </div>
     </form>
 </body>
