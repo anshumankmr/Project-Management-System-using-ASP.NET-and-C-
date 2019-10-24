@@ -9,10 +9,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
             <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Enter the Project Details:
-                
+                             
             </asp:Panel>
+             </div>
             <asp:Label ID="Label1" runat="server" Text="Enter the title of the project"></asp:Label>
             &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
@@ -35,7 +37,12 @@
        
             
             <asp:Button ID="EnterButton" runat="server" Text="Create Project" OnClick="EnterButton_Click"  />
-       
+            &nbsp;<br />
+            <br />
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+
+            <asp:Label ID="StatusLabel" runat="server" Text=""></asp:Label>
+             </div>
             
             <br />
             <br />

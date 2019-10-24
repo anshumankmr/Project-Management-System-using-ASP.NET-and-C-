@@ -24,13 +24,36 @@ namespace Project_Management
         protected void EnterButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
-            string command = "INSERT IGNORE INTO People (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
+            string command = "INSERT  INTO Projects (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
             SqlCommand cmd = new SqlCommand(command, connection);
             cmd.Parameters.AddWithValue("@title", TextBox1.Text);
             cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
             cmd.Parameters.AddWithValue("@client", TextBox2.Text);
             cmd.Parameters.AddWithValue("@status", TextBox4.Text);
+          
+            try
+            {
+                using (connection)
+                {
+                    connection.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows != 0 )
+                    {
+                        StatusLabel.Text = "Insertion Was Sucessful";
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
 
+                    }
+                    else
+                    {
+                        StatusLabel.Text = "Insertion Was Unsucessful";
+                        Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                    }
+                }
+            }
+            catch (Exception )
+            {
+
+            }
         }
     }
 }

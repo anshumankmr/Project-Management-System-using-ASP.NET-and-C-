@@ -41,8 +41,6 @@ namespace Project_Management
                         Label2.Text = "Welcome " + myreader["name"] + "! " + "Redirecting You To " + myreader["Type"] + "'s Page";
                         Session["Name"] = myreader["name"];
                         Session["UserName"] = myreader["UserName"];
-
-                        Thread.Sleep(2000);
                        // Response.Redirect(myreader["Type"].ToString() + ".aspx");
                     }
                     else
