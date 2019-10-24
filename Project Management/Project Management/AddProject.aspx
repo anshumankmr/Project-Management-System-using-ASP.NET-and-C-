@@ -9,28 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-             <div>
-                 <asp:Label ID="Label1" runat="server" Text="Project Details"></asp:Label></div>
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Enter the project title"></asp:Label>
-
-             &nbsp;&nbsp;&nbsp;
-
-            <asp:TextBox ID="ProjectName" runat="server" style="margin-bottom: 0px"></asp:TextBox>
-
-             <br />
-             <br />
-             Enter the client&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="Client" runat="server" Width="168px"></asp:TextBox>
-
-             <br />
-             <br />
-             Enter the duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <asp:TextBox ID="TextBox1" runat="server" Width="164px"></asp:TextBox>
-             <br />
-             <br />
-             <br />
-            <br />
+            <asp:Label ID="Label1" runat="server" Text="Enter the title of the project"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </div>
     </form>
 </body>
