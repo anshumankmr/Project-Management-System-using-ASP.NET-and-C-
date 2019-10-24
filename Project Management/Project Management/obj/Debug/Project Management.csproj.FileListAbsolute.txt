@@ -1,0 +1,34 @@
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\obj\Debug\Project Management.csprojResolveAssemblyReference.cache
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\csc.exe
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\csc.exe.config
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\csc.rsp
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\csi.exe
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\csi.rsp
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.AppContext.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\vbc.exe
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\vbc.exe.config
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\vbc.rsp
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\VBCSCompiler.exe
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\Project Management.dll.config
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\Project Management.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\Project Management.pdb
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\obj\Debug\Project Management.dll
+C:\Users\ANSHUMAN PC\Documents\GitHub\Project-Management-System-using-ASP.NET-and-C-\Project Management\Project Management\obj\Debug\Project Management.pdb
