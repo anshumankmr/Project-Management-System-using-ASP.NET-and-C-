@@ -24,7 +24,7 @@ namespace Project_Management
         protected void EnterButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
-            string command = "INSERT  INTO Projects (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
+            string command = "INSERT  INTO Project (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
             SqlCommand cmd = new SqlCommand(command, connection);
             cmd.Parameters.AddWithValue("@title", TextBox1.Text);
             cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
@@ -33,26 +33,28 @@ namespace Project_Management
           
             try
             {
-                using (connection)
-                {
-                    connection.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows != 0 )
-                    {
-                        StatusLabel.Text = "Insertion Was Sucessful";
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-
-                    }
-                    else
-                    {
-                        StatusLabel.Text = "Insertion Was Unsucessful";
-                        Page.Response.Redirect(Page.Request.Url.ToString(), true);
-                    }
+               connection.Open();
+               int rows = cmd.ExecuteNonQuery();
+               if (rows != 0 )
+               {
+                StatusLabel.Text = "Insertion Was Sucessful";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+               }
+               else
+               {
+                 StatusLabel.Text = "Insertion Was Unsucessful";
+                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Not Inserted')", true);
+                 Page.Response.Redirect(Page.Request.Url.ToString(), true);
                 }
+               
             }
             catch (Exception )
             {
-
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Exception')", true);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
