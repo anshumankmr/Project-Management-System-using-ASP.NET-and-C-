@@ -38,25 +38,36 @@ namespace Project_Management
                     myreader.Read();
                     if (myreader != null)
                     {
-                        Label2.Text = "Welcome " + myreader["name"] + "! " + "Redirecting You To " + myreader["Type"] + "'s Page";
+                        Label2.Text = myreader["Type"].ToString();
+                        Label2.Text = "Welcome " + myreader["name"] + "! You are a/an " + myreader["Type"]+". Redirecting You To " + myreader["Type"] + "'s Page";
+                       
                         Session["Name"] = myreader["name"];
                         Session["UserName"] = myreader["UserName"];
-                       // Response.Redirect(myreader["Type"].ToString() + ".aspx");
+                        if (myreader["Type"].ToString().StartsWith("A") )
+                        {
+                            Response.Redirect("Admin.aspx");
+                        }  
+                        else
+                        {
+                            Response.Redirect("Developer.aspx");
+                        }
                     }
                     else
                     {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record    asdsad Inserted Successfully')", true);
+
                         Label2.Text = "Oops!! The Password You Entered Was Incorrect";
-                        Thread.Sleep(2000);
-                       // Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                        
+                        //Page.Response.Redirect(Page.Request.Url.ToString(), true);
                     }
                 }
             }
             catch(Exception)
             {
-       
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' Inserted Successfully')", true);
+
                 Label2.Text = "Oops!! Random Error. Reloading in 1...";
-                Thread.Sleep(200000);
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                //Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
             finally
             {

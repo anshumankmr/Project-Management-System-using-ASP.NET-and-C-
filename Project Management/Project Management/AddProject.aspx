@@ -38,6 +38,9 @@
             
             <asp:Button ID="EnterButton" runat="server" Text="Create Project" OnClick="EnterButton_Click"  />
             &nbsp;<br />
+            <br /><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go Back To Admin Page" PostBackUrl="~/Admin.aspx" />
+            <br />
+            <br />
             <br />
             <div style="margin-left: auto; margin-right: auto; text-align: center;">
 

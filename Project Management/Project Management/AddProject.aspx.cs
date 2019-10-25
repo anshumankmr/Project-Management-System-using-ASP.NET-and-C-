@@ -57,5 +57,10 @@ namespace Project_Management
                 connection.Close();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
