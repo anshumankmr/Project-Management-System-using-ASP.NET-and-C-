@@ -78,6 +78,7 @@
   <ItemGroup>
     <Content Include="AddProject.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="UpdateProjectDetails.aspx" />
     <Content Include="ViewProjectDetails.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,6 +112,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateProjectDetails.aspx.cs">
+      <DependentUpon>UpdateProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProjectDetails.aspx.designer.cs">
+      <DependentUpon>UpdateProjectDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewProjectDetails.aspx.cs">
       <DependentUpon>ViewProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

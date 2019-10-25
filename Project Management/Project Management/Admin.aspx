@@ -22,7 +22,7 @@
             <asp:Button ID="ViewProjectButton" runat="server" Text="View Project Details" OnClick="Button2_Click" />
             <br />
             <br />
-            <asp:Button ID="UpdateProjectButton" runat="server" Text="Update Project Details" OnClick="Button3_Click" />
+            <asp:Button ID="UpdateProjectButton" runat="server" Text="Update Project Details" OnClick="Button3_Click" PostBackUrl ="UpdateProjectDetails.aspx"/>
             <br />
             <br />
             <asp:Button ID="ApproveCommentsButton" runat="server" Text="Approve Project Comments" OnClick="Button4_Click" />

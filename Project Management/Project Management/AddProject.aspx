@@ -16,10 +16,10 @@
             </asp:Panel>
              </div>
             <asp:Label ID="Label1" runat="server" Text="Enter the title of the project"></asp:Label>
-            &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <br />
-            Enter the name of the client
+            Enter the name of the client&nbsp;
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
             <br />
