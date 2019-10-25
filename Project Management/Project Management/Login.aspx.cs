@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
 
 namespace Project_Management
 {
@@ -36,19 +37,21 @@ namespace Project_Management
                     connection.Open();
                     myreader = cmd.ExecuteReader();
                     myreader.Read();
+                    HttpCookie cookie = new HttpCookie("Information");
+                    cookie["UserName"] = myreader["UserName"].ToString();
+                    cookie["Name"] = myreader["Name"].ToString();
+                    cookie.Expires = DateTime.Now.AddDays(1);
                     if (myreader != null)
                     {
                         Label2.Text = myreader["Type"].ToString();
-                        Label2.Text = "Welcome " + myreader["name"] + "! You are a/an " + myreader["Type"]+". Redirecting You To " + myreader["Type"] + "'s Page";
-                        Thread.Sleep(1000);
-                        Session["Name"] = myreader["Name"];
-                        Session["UserName"] = myreader["UserName"];
                         if (myreader["Type"].ToString().StartsWith("A") )
                         {
+                            Response.Cookies.Add(cookie);
                             Response.Redirect("Admin.aspx");
                         }  
                         else
                         {
+                            Response.Cookies.Add(cookie);
                             Response.Redirect("Developer.aspx");
                         }
                     }
