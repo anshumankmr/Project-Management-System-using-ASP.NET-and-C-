@@ -11,7 +11,10 @@ namespace Project_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Label1.Text = "Welcome " + Session["Name"] + ". Your UserName is " + Session["UserName"];
+            }
         }
     }
 }

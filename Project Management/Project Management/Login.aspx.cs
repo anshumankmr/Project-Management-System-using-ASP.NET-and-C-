@@ -40,8 +40,8 @@ namespace Project_Management
                     {
                         Label2.Text = myreader["Type"].ToString();
                         Label2.Text = "Welcome " + myreader["name"] + "! You are a/an " + myreader["Type"]+". Redirecting You To " + myreader["Type"] + "'s Page";
-                       
-                        Session["Name"] = myreader["name"];
+                        Thread.Sleep(1000);
+                        Session["Name"] = myreader["Name"];
                         Session["UserName"] = myreader["UserName"];
                         if (myreader["Type"].ToString().StartsWith("A") )
                         {

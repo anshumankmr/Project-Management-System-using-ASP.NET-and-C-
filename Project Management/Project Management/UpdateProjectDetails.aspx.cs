@@ -13,7 +13,8 @@ namespace Project_Management
     public partial class UpdateProjectDetails : System.Web.UI.Page
     {
         private string connectionstring = WebConfigurationManager.ConnectionStrings["Project"].ConnectionString;
-        private string id;
+        private int flag;
+        private string search;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -53,14 +54,18 @@ namespace Project_Management
                 if (TextBox1.Text.Length != 0)
                 {
                     query = TextBox1.Text;
-
+                    
                     SqlCommand cmd = new SqlCommand("SELECT * FROM  Project WHERE Title = @title", con);
                     cmd.Parameters.AddWithValue("@title", query);
                     adapter = new SqlDataAdapter(cmd);
+                    search = query;
+                    flag = 0;
                 }
                 else
                 {
                     query = TextBox2.Text;
+                    search = query;
+                    flag = 1;
                     SqlCommand cmd = new SqlCommand("SELECT * FROM  Project WHERE ProjectID = @id", con);
                     cmd.Parameters.AddWithValue("@id", query);
                     adapter = new SqlDataAdapter(cmd);
@@ -73,7 +78,7 @@ namespace Project_Management
                     GridView1.DataBind();
                     Label3.Visible = true;
                     RadioButtonList1.Visible = true;
-                    id = ds.Tables["Project"].Rows[0]["ProjectId"].ToString();
+                  
 
 
                 }
@@ -108,12 +113,23 @@ namespace Project_Management
             string command = @"UPDATE Project 
                SET Status = @status
                    Duration = @duration
-               WHERE ProjectId = @id";
-            SqlCommand cmd = new SqlCommand(command, connection);
-            cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
-            cmd.Parameters.AddWithValue("@status", TextBox4.Text);
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
+               WHERE";
+            if ( flag  == 1)
+            {
+                command += "ProjectId = @id";
+
+            }
+            else
+            {
+                command += "Title = @id";
+            }
+            SqlCommand cmd1 = new SqlCommand(command, connection);
+            cmd1.Parameters.AddWithValue("@duration", TextBox3.Text);
+            cmd1.Parameters.AddWithValue("@status", TextBox4.Text);
+            cmd1.Parameters.AddWithValue("@id", search);
+            connection.Open();
+            cmd1.ExecuteNonQuery();
+            connection.Close();
             
         }
     }

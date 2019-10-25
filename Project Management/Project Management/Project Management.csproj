@@ -68,6 +68,10 @@
     <Content Include="Admin.aspx" />
     <Content Include="Developer.aspx" />
     <Content Include="packages.config" />
+    <Content Include="App_Themes\Button\Button.skin" />
+    <Content Include="App_Themes\LabelSkin\LabelSkin.skin" />
+    <Content Include="App_Themes\TextBox1\TextBox1.skin" />
+    <Content Include="App_Themes\TextBox2\TextBox2.skin" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
