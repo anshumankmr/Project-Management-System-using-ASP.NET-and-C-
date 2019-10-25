@@ -42,6 +42,18 @@
                  <br />
                  <asp:GridView ID="GridView1" runat="server">
                  </asp:GridView>
+                 <asp:Label ID="Label3" runat="server" Text="Would You Like To Update the Values?"></asp:Label>
+                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" TextAlign="Right">
+                 </asp:RadioButtonList>
+                 <br />
+                 <asp:Label ID="Label4" runat="server" Text="Enter the remaining duration "></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                 <br />
+                 <br />
+                 <asp:Label ID="Label5" runat="server" Text="Insert The Updated Status"></asp:Label>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                 <br />
                  <br />
                  <br />
         </div>

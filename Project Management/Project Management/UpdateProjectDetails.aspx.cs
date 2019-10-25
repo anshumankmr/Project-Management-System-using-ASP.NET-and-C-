@@ -13,13 +13,31 @@ namespace Project_Management
     public partial class UpdateProjectDetails : System.Web.UI.Page
     {
         private string connectionstring = WebConfigurationManager.ConnectionStrings["Project"].ConnectionString;
+        private string id;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                RadioButtonList1.Visible = false;
+                Label3.Visible = false;
+                Label4.Visible = false;
+                Label5.Visible = false;
+                TextBox3.Visible = false;
+                TextBox4.Visible = false;
+                RadioButtonList1.Items.Add("Yes");
+                RadioButtonList1.Items.Add("No");
+            }
         }
         protected void ServerValidate(object sender, ServerValidateEventArgs args)
         {
-            args.IsValid = TextBox1.Text.Trim().Length > 0 || TextBox2.Text.Trim().Length > 0;
+            if (TextBox1.Text.Length > 0 && TextBox2.Text.Length > 0)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true ;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,7 +45,6 @@ namespace Project_Management
 
             if (Page.IsValid)
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
                 string query;
                 SqlConnection con = new SqlConnection(connectionstring);
                 DataSet ds = new DataSet();
@@ -39,8 +56,6 @@ namespace Project_Management
                     SqlCommand cmd = new SqlCommand("SELECT * FROM  Project WHERE Title = @title", con);
                     cmd.Parameters.AddWithValue("@title", query);
                     adapter = new SqlDataAdapter(cmd);
-
-
                 }
                 else
                 {
@@ -50,10 +65,47 @@ namespace Project_Management
                     adapter = new SqlDataAdapter(cmd);
                 }
                 adapter.Fill(ds, "Project");
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
+                if (ds.Tables["Project"].Rows.Count > 0 )
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Search Successful')", true);
+                    GridView1.DataSource = ds;
+                    GridView1.DataBind();
+                    Label3.Visible = true;
+                    Label4.Visible = true;
+                    Label5.Visible = true;
+                    TextBox3.Visible = true;
+                    TextBox4.Visible = true;
+                    RadioButtonList1.Visible = true;
+                    id = ds.Tables["Project"].Rows[0]["ProjectId"].ToString();
+
+
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Search Unsuccessful')", true);
+                }
+               
             }
 
+        }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RadioButtonList1.SelectedIndex == 0)
+            {
+                SqlConnection connection = new SqlConnection(connectionstring);
+                string command = @"UPDATE Project 
+               SET Status = @status
+                   Duration = @duration
+               WHERE ";
+                SqlCommand cmd = new SqlCommand(command, connection);
+                cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
+                cmd.Parameters.AddWithValue("@status", TextBox4.Text);
+            }
+            else
+            {
+                Response.Redirect("Admin.aspx");
+            }
         }
     }
 }
