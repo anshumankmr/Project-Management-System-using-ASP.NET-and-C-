@@ -42,8 +42,10 @@
                  <br />
                  <asp:GridView ID="GridView1" runat="server">
                  </asp:GridView>
+                 <br />
+                 <br />
                  <asp:Label ID="Label3" runat="server" Text="Would You Like To Update the Values?"></asp:Label>
-                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" TextAlign="Right">
+                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" TextAlign="Right" AutoPostBack ="true">
                  </asp:RadioButtonList>
                  <br />
                  <asp:Label ID="Label4" runat="server" Text="Enter the remaining duration "></asp:Label>
@@ -54,6 +56,9 @@
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                  <br />
+                 <br />
+                 <br />
+                 <asp:Button ID="Button2" runat="server" Text="Confirm" OnClick="Button2_Click" />
                  <br />
                  <br />
         </div>

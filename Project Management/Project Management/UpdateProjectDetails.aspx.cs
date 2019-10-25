@@ -24,6 +24,7 @@ namespace Project_Management
                 Label5.Visible = false;
                 TextBox3.Visible = false;
                 TextBox4.Visible = false;
+                Button2.Visible = false;
                 RadioButtonList1.Items.Add("Yes");
                 RadioButtonList1.Items.Add("No");
             }
@@ -71,10 +72,6 @@ namespace Project_Management
                     GridView1.DataSource = ds;
                     GridView1.DataBind();
                     Label3.Visible = true;
-                    Label4.Visible = true;
-                    Label5.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
                     RadioButtonList1.Visible = true;
                     id = ds.Tables["Project"].Rows[0]["ProjectId"].ToString();
 
@@ -93,19 +90,31 @@ namespace Project_Management
         {
             if (RadioButtonList1.SelectedIndex == 0)
             {
-                SqlConnection connection = new SqlConnection(connectionstring);
-                string command = @"UPDATE Project 
-               SET Status = @status
-                   Duration = @duration
-               WHERE ";
-                SqlCommand cmd = new SqlCommand(command, connection);
-                cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
-                cmd.Parameters.AddWithValue("@status", TextBox4.Text);
+                Label4.Visible = true;
+                Label5.Visible = true;
+                TextBox3.Visible = true;
+                TextBox4.Visible = true;
+                Button2.Visible = true;
             }
             else
             {
                 Response.Redirect("Admin.aspx");
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionstring);
+            string command = @"UPDATE Project 
+               SET Status = @status
+                   Duration = @duration
+               WHERE ProjectId = @id";
+            SqlCommand cmd = new SqlCommand(command, connection);
+            cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
+            cmd.Parameters.AddWithValue("@status", TextBox4.Text);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            
         }
     }
 }
