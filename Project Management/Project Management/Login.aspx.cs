@@ -37,10 +37,11 @@ namespace Project_Management
                     connection.Open();
                     myreader = cmd.ExecuteReader();
                     myreader.Read();
-                    HttpCookie cookie = new HttpCookie("Information");
+                    HttpCookie cookie = new HttpCookie("Info");
                     cookie["UserName"] = myreader["UserName"].ToString();
                     cookie["Name"] = myreader["Name"].ToString();
-                    cookie.Expires = DateTime.Now.AddDays(1);
+                    cookie["ProjectID"] = myreader["ProjectId"].ToString();
+                    cookie.Expires = DateTime.Now.AddHours(1);
                     if (myreader != null)
                     {
                         Label2.Text = myreader["Type"].ToString();
@@ -57,7 +58,7 @@ namespace Project_Management
                     }
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record    asdsad Inserted Successfully')", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record    Inserted Successfully')", true);
 
                         Label2.Text = "Oops!! The Password You Entered Was Incorrect";
                         

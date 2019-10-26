@@ -9,20 +9,36 @@ namespace Project_Management
 {
     public partial class Developer : System.Web.UI.Page
     {
-        private string name, username;
-
+       private string name, username,pid;
+        HttpCookie cookie;
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Comment.aspx?=Name"+name+"&UserName="+username);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                
+                Response.Cookies.Add(cookie);
+            }
+            
+            Response.Redirect("DeveloperViewComment.aspx") ;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                HttpCookie cookie = Request.Cookies["Information"];
+                HttpCookie cookie  = Request.Cookies["Info"];
                 name = cookie["Name"];
                 username = cookie["UserName"];
+                pid = cookie["ProjectId"];
                 Label1.Text = "Welcome " + name ;
             }
         }

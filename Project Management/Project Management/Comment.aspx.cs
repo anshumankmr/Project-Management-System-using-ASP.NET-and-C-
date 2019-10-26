@@ -41,9 +41,9 @@ namespace Project_Management
                     }
                 
             }
-            catch( Exception)
+            catch( Exception ex)
             {
-
+                Label3.Text = ex.Message;
             }
             finally
             {

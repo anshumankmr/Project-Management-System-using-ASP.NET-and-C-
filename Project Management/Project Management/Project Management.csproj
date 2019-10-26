@@ -68,6 +68,7 @@
     <Content Include="Admin.aspx" />
     <Content Include="Comment.aspx" />
     <Content Include="Developer.aspx" />
+    <Content Include="DeveloperViewComment.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Button\Button.skin" />
     <Content Include="App_Themes\LabelSkin\LabelSkin.skin" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="Developer.aspx.designer.cs">
       <DependentUpon>Developer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeveloperViewComment.aspx.cs">
+      <DependentUpon>DeveloperViewComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeveloperViewComment.aspx.designer.cs">
+      <DependentUpon>DeveloperViewComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

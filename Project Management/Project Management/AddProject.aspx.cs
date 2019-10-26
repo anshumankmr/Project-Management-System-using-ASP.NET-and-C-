@@ -24,7 +24,7 @@ namespace Project_Management
         protected void EnterButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
-            string command = "INSERT  INTO Comment (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
+            string command = "INSERT  INTO Project (Title,Duration,Client,Status) VALUES (@title , @duration , @client , @status )";
             SqlCommand cmd = new SqlCommand(command, connection);
             cmd.Parameters.AddWithValue("@title", TextBox1.Text);
             cmd.Parameters.AddWithValue("@duration", TextBox3.Text);
@@ -48,9 +48,10 @@ namespace Project_Management
                 }
                
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Exception')", true);
+                Label2.Text = ex.Message;
+               // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + ex.Message + "')", true);
             }
             finally
             {

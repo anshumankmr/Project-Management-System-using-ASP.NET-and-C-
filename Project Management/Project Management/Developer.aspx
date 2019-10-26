@@ -24,7 +24,7 @@
 
                 <br />
                 <br />
-             <asp:Button ID="Button2" runat="server" Text="View Comments" Width="187px" />
+             <asp:Button ID="Button2" runat="server" Text="View Comments" Width="187px" OnClick="Button2_Click"  />
 
 
         </div>

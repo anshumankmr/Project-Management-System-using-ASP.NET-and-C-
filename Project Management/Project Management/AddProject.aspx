@@ -37,7 +37,8 @@
        
             
             <asp:Button ID="EnterButton" runat="server" Text="Create Project" OnClick="EnterButton_Click"  />
-            &nbsp;<br />
+            &nbsp;<asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+            <br />
             <br /><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go Back To Admin Page" PostBackUrl="~/Admin.aspx" />
             <br />
             <br />
