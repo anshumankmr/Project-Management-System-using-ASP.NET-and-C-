@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="cph1" runat="server">
         <div style="margin-left:auto;margin-right:auto;text-align:center;">
-            <asp:Panel ID="pan" runat="server" BackColor="LightSeaGreen">Project Management System</asp:Panel>
+            <asp:Panel ID="pan" runat="server" BackColor="LightBlue"></asp:Panel>
         </div>
         <br />
         <div>

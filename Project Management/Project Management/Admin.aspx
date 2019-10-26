@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project_Management.Admin"  MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project_Management.Admin"   %>
 
 <!DOCTYPE html>
 
@@ -9,8 +9,7 @@
 <body>
     
     <form id="form1" runat="server">
-        <asp:Content ID="Content1" ContentPlaceHolderID="cph1" runat="Server">
-        </asp:Content>
+        
             <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Admin's WebPage:
             </asp:Panel>
