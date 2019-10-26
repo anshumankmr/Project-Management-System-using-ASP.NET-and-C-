@@ -12,7 +12,7 @@ namespace Project_Management
     public partial class Comment : System.Web.UI.Page
     {
         private string connectionstring = WebConfigurationManager.ConnectionStrings["Project"].ConnectionString;
-        private string usrname;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -24,13 +24,13 @@ namespace Project_Management
         {
             SqlConnection connection = new SqlConnection(connectionstring);
             
-            string command = "INSERT  INTO Comment (Text,UserName,ProjectId) VALUES (@cmt , @usrname , @pid )";
-            usrname = Request.QueryString["UserName"];
-            Label3.Text = usrname;
+            string command = "INSERT  INTO Comment (Text,ProjectId) VALUES (@cmt, @pid )";
+     
+            
             SqlCommand cmd = new SqlCommand(command, connection);
             cmd.Parameters.AddWithValue("@cmt",TextBox1.Text);
             cmd.Parameters.AddWithValue("@pid", TextBox2.Text);
-            cmd.Parameters.AddWithValue("@usrname", usrname);
+         
             try 
             {
               connection.Open();

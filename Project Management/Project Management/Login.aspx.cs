@@ -18,7 +18,6 @@ namespace Project_Management
         {
             if (IsPostBack)
             {
-                Session.Abandon();
             }
         }
 
@@ -37,11 +36,11 @@ namespace Project_Management
                     connection.Open();
                     myreader = cmd.ExecuteReader();
                     myreader.Read();
-                    HttpCookie cookie = new HttpCookie("Info");
+                    HttpCookie cookie = new HttpCookie("info");
                     cookie["UserName"] = myreader["UserName"].ToString();
                     cookie["Name"] = myreader["Name"].ToString();
                     cookie["ProjectID"] = myreader["ProjectId"].ToString();
-                    cookie.Expires = DateTime.Now.AddHours(1);
+                    cookie.Expires = DateTime.Now.AddDays(1);
                     if (myreader != null)
                     {
                         Label2.Text = myreader["Type"].ToString();

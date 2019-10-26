@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project_Management.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="cph1" runat="server">
+        <div style="margin-left:auto;margin-right:auto;text-align:center;">
+            <asp:Panel ID="pan" runat="server" BackColor="LightSeaGreen">Project Management System</asp:Panel>
+        </div>
+        <br />
+        <div>
+            
+            
+        </div>
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

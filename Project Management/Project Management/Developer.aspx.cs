@@ -10,21 +10,21 @@ namespace Project_Management
     public partial class Developer : System.Web.UI.Page
     {
        private string name, username,pid;
-        HttpCookie cookie;
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Comment.aspx?=Name"+name+"&UserName="+username);
+            
+            Response.Redirect("Comment.aspx?UserName="+username);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            try
+            
             {
-
-            }
-            catch (Exception)
-            {
-                
+                HttpCookie cookie = Request.Cookies["info"];
+                name = cookie["Name"];
+                username = cookie["UserName"];
+                pid = cookie["ProjectId"];
                 Response.Cookies.Add(cookie);
             }
             
@@ -35,7 +35,7 @@ namespace Project_Management
         {
             if (!IsPostBack)
             {
-                HttpCookie cookie  = Request.Cookies["Info"];
+                HttpCookie cookie  = Request.Cookies["info"];
                 name = cookie["Name"];
                 username = cookie["UserName"];
                 pid = cookie["ProjectId"];

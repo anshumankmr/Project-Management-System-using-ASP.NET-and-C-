@@ -59,6 +59,7 @@
                  <br />
                  <br />
                  <asp:Button ID="Button2" runat="server" Text="Confirm" OnClick="Button2_Click" />
+                 <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
                  <br />
                  <br />
         </div>

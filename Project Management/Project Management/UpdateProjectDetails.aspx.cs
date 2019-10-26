@@ -78,9 +78,6 @@ namespace Project_Management
                     GridView1.DataBind();
                     Label3.Visible = true;
                     RadioButtonList1.Visible = true;
-                  
-
-
                 }
                 else
                 {
@@ -109,28 +106,34 @@ namespace Project_Management
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionstring);
-            string command = @"UPDATE Project 
-               SET Status = @status
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionstring);
+                string command = @"UPDATE Project 
+               SET Status = @status,
                    Duration = @duration
                WHERE";
-            if ( flag  == 1)
-            {
-                command += "ProjectId = @id";
-
+                if (flag == 1)
+                {
+                    command += ",ProjectId = @id";
+                    
+                }
+                else
+                {
+                    command += ",Title = @id"; //Label6.Text = "2";
+                }
+                SqlCommand cmd1 = new SqlCommand(command, connection);
+                cmd1.Parameters.AddWithValue("@duration", TextBox3.Text);
+                cmd1.Parameters.AddWithValue("@status", TextBox4.Text);
+                cmd1.Parameters.AddWithValue("@id", search);
+                connection.Open();
+                cmd1.ExecuteNonQuery();
+                connection.Close();
             }
-            else
+            catch(Exception ex)
             {
-                command += "Title = @id";
+                Label6.Text = ex.Message;
             }
-            SqlCommand cmd1 = new SqlCommand(command, connection);
-            cmd1.Parameters.AddWithValue("@duration", TextBox3.Text);
-            cmd1.Parameters.AddWithValue("@status", TextBox4.Text);
-            cmd1.Parameters.AddWithValue("@id", search);
-            connection.Open();
-            cmd1.ExecuteNonQuery();
-            connection.Close();
-            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project_Management.Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project_Management.Admin"  MasterPageFile="~/Site1.Master" %>
 
 <!DOCTYPE html>
 
@@ -7,15 +7,14 @@
     <title></title>
 </head>
 <body>
+    
     <form id="form1" runat="server">
-        <div style="margin-left: auto; margin-right: auto; text-align: center;">
-
+        <asp:Content ID="Content1" ContentPlaceHolderID="cph1" runat="Server">
+        </asp:Content>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Admin's WebPage:
-                             
             </asp:Panel>
-        </div>
-        <br />
-        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+            <br />
             <asp:Button ID="CreateButton" runat="server" Text="Create a New Project" OnClick="Button1_Click" PostBackUrl="AddProject.aspx" />
             <br />
             <br />
@@ -39,6 +38,8 @@
             <asp:GridView ID="GridView1"  runat="server">
             </asp:GridView>
         </div>
+        
     </form>
+    
 </body>
 </html>

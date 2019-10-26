@@ -40,18 +40,19 @@ namespace Project_Management
             catch(Exception )
             {
                 
-                HttpCookie cookie = Request.Cookies["Info"];
+                HttpCookie cookie = Request.Cookies["info"];
                 string name = cookie["Name"];
                 string username = cookie["UserName"];
                 string pid = cookie["ProjectId"];
                 Label1.Text = "Welcome " + name + " User Name : " + username + " Project ID" + pid;
-                cmd.Parameters.AddWithValue("@pid", pid);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                SqlCommand cmd1 = new SqlCommand(selectSQL, con);
+                cmd1.Parameters.AddWithValue("@pid", pid);
+                SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
                 // Fill the DataSet.
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "Comment");
+                DataSet ds1 = new DataSet();
+                adapter1.Fill(ds1, "Comment");
                 // Perform the binding.
-                GridView1.DataSource = ds;
+                GridView1.DataSource = ds1;
                 GridView1.DataBind();
             }
         }
