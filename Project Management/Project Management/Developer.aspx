@@ -20,11 +20,16 @@
                 <br />
              
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Make A Comment" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Make A Comment" OnClick="Button1_Click" SkinID="Button" />
 
                 <br />
                 <br />
-             <asp:Button ID="Button2" runat="server" Text="View Comments" Width="187px" OnClick="Button2_Click"  />
+             <asp:Button ID="Button2" runat="server" Text="View Comments" Width="187px" OnClick="Button2_Click" SkinID="Button" />
+
+
+                <br />
+                <br />
+                <asp:Button ID="Button3" runat="server" Height="29px" Text="View Project Details" OnClick="Button3_Click" />
 
 
         </div>

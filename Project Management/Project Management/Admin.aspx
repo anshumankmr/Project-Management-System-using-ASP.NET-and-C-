@@ -13,6 +13,8 @@
             <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <asp:Panel ID="Panel1" runat="server" BackColor="LightBlue">Admin's WebPage:
             </asp:Panel>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <br />
             <br />
             <asp:Button ID="CreateButton" runat="server" Text="Create a New Project" OnClick="Button1_Click" PostBackUrl="AddProject.aspx" />
             <br />

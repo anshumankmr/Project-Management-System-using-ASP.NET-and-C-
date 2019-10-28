@@ -121,7 +121,14 @@ namespace Project_Management
                 cmd1.Parameters.AddWithValue("@ID", TextBox1.Text + TextBox2.Text);
                 connection.Open();
                 cmd1.ExecuteNonQuery();
+                string command1 = @"UPDATE Project 
+                   SET Updates = Updates +1
+               WHERE ProjectId = @ID";
+                cmd1.ExecuteNonQuery();
+                cmd1.CommandText = command1;
+                cmd1.ExecuteNonQuery();
                 connection.Close();
+               
             }
             catch(Exception ex)
             {

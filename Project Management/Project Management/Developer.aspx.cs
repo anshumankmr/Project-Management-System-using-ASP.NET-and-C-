@@ -17,6 +17,13 @@ namespace Project_Management
             Response.Redirect("Comment.aspx?UserName="+username);
         }
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["info"];
+            Response.Cookies.Add(cookie);
+            Response.Redirect("View.aspx");
+        }
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             

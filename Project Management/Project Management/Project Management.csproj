@@ -70,6 +70,7 @@
     <Content Include="Comment.aspx" />
     <Content Include="Developer.aspx" />
     <Content Include="DeveloperViewComment.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Button\Button.skin" />
     <Content Include="App_Themes\LabelSkin\LabelSkin.skin" />
@@ -88,6 +89,7 @@
     <Content Include="AddProject.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="UpdateProjectDetails.aspx" />
+    <Content Include="View.aspx" />
     <Content Include="ViewProjectDetails.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -134,6 +136,9 @@
     <Compile Include="DeveloperViewComment.aspx.designer.cs">
       <DependentUpon>DeveloperViewComment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +167,13 @@
     </Compile>
     <Compile Include="UpdateProjectDetails.aspx.designer.cs">
       <DependentUpon>UpdateProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewProjectDetails.aspx.cs">
       <DependentUpon>ViewProjectDetails.aspx</DependentUpon>

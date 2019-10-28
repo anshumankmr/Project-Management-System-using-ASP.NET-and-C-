@@ -16,8 +16,14 @@ namespace Project_Management
         private string connectionstring = WebConfigurationManager.ConnectionStrings["Project"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
+
+                Label3.Text = Session.SessionID.ToString();
+            }
+            else if (IsPostBack)
+            {
+                
             }
         }
 
@@ -25,6 +31,7 @@ namespace Project_Management
         {
             string username = TextBox1.Text;
             string password = TextBox2.Text;
+            
             SqlConnection connection = new SqlConnection(connectionstring);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Login WHERE UserName = @username AND Password =  @password", connection);
             cmd.Parameters.AddWithValue("@username",username);
@@ -47,7 +54,7 @@ namespace Project_Management
                         if (myreader["Type"].ToString().StartsWith("A") )
                         {
                             Response.Cookies.Add(cookie);
-                            Response.Redirect("Admin.aspx");
+                            Response.Redirect("Admin.aspx?name=Anshuman");
                         }  
                         else
                         {

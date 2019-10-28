@@ -26,9 +26,13 @@
             <br />
             <br />
             &nbsp;
-            <asp:Button ID="ButtonLogin" runat="server" OnClick="Button1_Click" Text="Login" style="width: 60px" />
+            <asp:Button ID="ButtonLogin" runat="server" OnClick="Button1_Click" Text="Login" style="width: 60px" SkinID="Button"/>
              <br />
          <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+            <asp:RequiredFieldValidator ID="username_required" Display="None" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username is mandatory!" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="password_required" Display="None" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password is mandatory!" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         
     </form>

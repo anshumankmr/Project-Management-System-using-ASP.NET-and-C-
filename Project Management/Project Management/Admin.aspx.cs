@@ -18,6 +18,7 @@ namespace Project_Management
         {
             if (!IsPostBack)
             {
+                Label1.Text ="Welcome Admin!! You are "  + Request.QueryString["name"];
                 SqlConnection conn = new SqlConnection(connectionstring);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Comment ", conn);
                 DataSet ds = new DataSet();
