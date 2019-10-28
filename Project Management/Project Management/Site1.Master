@@ -4,20 +4,25 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Project Management System</title>
+    
 </head>
 <body>
+    
+
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="cph1" runat="server">
         <div style="margin-left:auto;margin-right:auto;text-align:center;">
-            <asp:Panel ID="pan" runat="server" BackColor="LightBlue"></asp:Panel>
+            <asp:Panel ID="pan" runat="server" BackColor="LightBlue">Project Management System</asp:Panel>
         </div>
         <br />
         <div>
             
             
         </div>
-            </asp:ContentPlaceHolder>
+         </asp:ContentPlaceHolder>   
     </form>
+       
 </body>
+         
 </html>

@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="Approve.aspx" />
     <Content Include="Comment.aspx" />
     <Content Include="Developer.aspx" />
     <Content Include="DeveloperViewComment.aspx" />
@@ -74,6 +75,7 @@
     <Content Include="App_Themes\LabelSkin\LabelSkin.skin" />
     <Content Include="App_Themes\TextBox1\TextBox1.skin" />
     <Content Include="App_Themes\TextBox2\TextBox2.skin" />
+    <Content Include="Report.aspx" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -104,6 +106,13 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comment.aspx.cs">
       <DependentUpon>Comment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +142,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

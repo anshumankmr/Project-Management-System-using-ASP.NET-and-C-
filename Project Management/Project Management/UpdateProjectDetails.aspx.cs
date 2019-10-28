@@ -59,13 +59,13 @@ namespace Project_Management
                     cmd.Parameters.AddWithValue("@title", query);
                     adapter = new SqlDataAdapter(cmd);
                    // search = query;
-                    flag = 0;
+                    ///flag = 0;
                 }
                 else
                 {
                     query = TextBox2.Text;
                    /// search = query;
-                    flag = 1;
+                   // flag = 1;
                     SqlCommand cmd = new SqlCommand("SELECT * FROM  Project WHERE ProjectID = @id", con);
                     cmd.Parameters.AddWithValue("@id", query);
                     adapter = new SqlDataAdapter(cmd);
